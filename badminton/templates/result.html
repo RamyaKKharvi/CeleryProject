@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Result Page</h1>
+
+    {% if result %}
+    <ul>
+        <li>Task ID: {{result.id}}</li>
+        <li>Task ID: {{result.task_id}}</li>
+        <li>Task State: {{result.state}}</li>
+        <li>Task Status: {{result.status}}</li>
+        <li>Result Value: {{result.result}}</li>
+    </ul>
+    {% else %}
+        <p>Internal Server Error</p>
+    {% endif %}
+
+    <a href="{% url 'home' %}" class="mx-3 btn btn-success" >Back to Home</a>
+
+{% endblock content %}

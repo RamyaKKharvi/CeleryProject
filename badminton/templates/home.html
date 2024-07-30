@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Badminton</title>
+    <style>
+        h1{
+        color:purple;
+
+        }
+        h3{
+        color:maroon
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+<div class="container mt-3">
+    {% block content %}
+    <h1 class="text-center"><u>Badminton</u></h1>
+    <h3>Introduction</h3>
+    <div class="container">
+        <p>Badminton is a competitive sport that requires speed, agility and skill on the court.
+            A badminton match consists of the best-of-three games of 21 points.
+            It is a racquet sport in which two or four players hit a shuttlecock back and forth using racquets held crosswise.
+            The shuttlecock is very light. Playing badminton is an excellent exercise for the body.
+            It strengthens muscles, enhances reflexes and motor coordination, increases flexibility and improves balance.
+            It helps with these things better than other sports because it uses every muscle in the body</p>
+    </div>
+    <h3>Rules and Regulations</h3>
+    <p>
+        <ol>
+            <li>This game has rectangular court and the net which is stretched at the center throughout the court.</li>
+            <li>Itc commences with a coin toss and the team who wins the toss has a choice to pick a side to play.</li>
+            <li>It is always to be observed that the service is from below the waist, diagonally and at no point the
+                shuttlecock can be carried or come to rest on the racket during the game.</li>
+            <li>The player should not reach over and touch the net with racket or body to hit, nor should he touch any
+                of the lines drawn in the court during the serve.</li>
+            <li>In a singles match, the server stands on the right service court corner when the score is even and the
+                server moves to the left corner when the score is odd.</li>
+            <li>The scores are given on the basis of the best 2 of 3 games, with each game played up to 21 points.
+                And when both teams tie at 29 points, then the game continues till one team achieves a two-point advantage.</li>
+            <li>A point is given each time a player wins a rally, or strikes by the shuttlecock and it touches the floor
+                of the opponent’s side. The player also scores when the opponent commits any fault by not abiding by the aforementioned rules.</li>
+        </ol>
+    <h3>Result Page</h3>
+    <div class="container">
+        <p><b>Check Celery Task Results For Total Score <a href="{% url 'result' total_id %}">[ Task ID: {{total_id}} ]</a></b></p>
+        <p><b>Check Celery Task Results For Score Difference <a href="{% url 'result' diff_id %}">[ Task ID: {{diff_id}} ]</a></b></p>
+    </div>
+    {% endblock content %}
+</div>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>
